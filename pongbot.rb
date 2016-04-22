@@ -3,7 +3,8 @@ require 'slack-ruby-bot'
 class PongBot < SlackRubyBot::Bot
   command 'ping' do |client, data, match|
     client.say(text: 'pong', channel: data.channel)
-    client.say(text: 'Thanks for participating.',
+    client.say(text: ['Thanks for participating.',
+                      'Have a gif!'].sample
                gif: %w(thanks sweet kudos cheers).sample,
                channel: data.channel)
   end
